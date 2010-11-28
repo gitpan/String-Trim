@@ -3,7 +3,7 @@ use warnings;
 
 package String::Trim;
 BEGIN {
-  $String::Trim::VERSION = '0.001';
+  $String::Trim::VERSION = '0.002';
 }
 # ABSTRACT: trim whitespace from your strings
 
@@ -50,7 +50,7 @@ String::Trim - trim whitespace from your strings
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -143,11 +143,10 @@ Rob Kinyon <rkinyon@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2010 by Mike Doherty.
+This software is copyright (c) 2010 by Mike Doherty.
 
-This is free software, licensed under:
-
-  The GNU General Public License, Version 3, June 2007
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 

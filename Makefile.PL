@@ -21,12 +21,12 @@ my %WriteMakefileArgs = (
   },
   'DISTNAME' => 'String-Trim',
   'EXE_FILES' => [],
-  'LICENSE' => 'gpl',
+  'LICENSE' => 'perl',
   'NAME' => 'String::Trim',
   'PREREQ_PM' => {
     'Exporter' => '0'
   },
-  'VERSION' => '0.001',
+  'VERSION' => '0.002',
   'test' => {
     'TESTS' => 't/*.t'
   }

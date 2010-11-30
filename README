@@ -2,7 +2,7 @@ NAME
     String::Trim - trim whitespace from your strings
 
 VERSION
-    version 0.002
+    version 0.003
 
 SYNOPSIS
         use String::Trim;
@@ -43,6 +43,10 @@ RATIONALE
     Debug::ShowStuff, which depends on Taint, which fails the test suite,
     and doesn't appear to be maintained. This module installs, is actively
     maintained, and has no non-core dependencies.
+
+    Other options include Text::Trim and String::Strip (which is implemented
+    in XS, and is therefore likely to be very fast, but requires a C
+    compiler).
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive

@@ -11,6 +11,7 @@ t/01-string.t
 t/02-undef.t
 t/03-array.t
 t/04-arrayref.t
+t/05-default.t
 xt/author/critic.t
 xt/release/dist-manifest.t
 xt/release/distmeta.t

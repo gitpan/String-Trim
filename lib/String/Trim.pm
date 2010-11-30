@@ -3,7 +3,7 @@ use warnings;
 
 package String::Trim;
 BEGIN {
-  $String::Trim::VERSION = '0.002';
+  $String::Trim::VERSION = '0.003';
 }
 # ABSTRACT: trim whitespace from your strings
 
@@ -50,7 +50,7 @@ String::Trim - trim whitespace from your strings
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -94,6 +94,9 @@ C<trim> is often used by beginners, who may not understand how to spin their own
 L<String::Util> does have a C<trim> function, it depends on L<Debug::ShowStuff>, which
 depends on L<Taint>, which fails the test suite, and doesn't appear to be maintained.
 This module installs, is actively maintained, and has no non-core dependencies.
+
+Other options include L<Text::Trim> and L<String::Strip> (which is implemented in XS,
+and is therefore likely to be very fast, but requires a C compiler).
 
 =head1 AVAILABILITY
 

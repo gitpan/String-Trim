@@ -3,13 +3,13 @@ use warnings;
 
 package String::Trim;
 BEGIN {
-  $String::Trim::VERSION = '0.003';
+  $String::Trim::VERSION = '0.004';
 }
 # ABSTRACT: trim whitespace from your strings
 
 
-use Exporter qw(import);
-our @EXPORT = qw(trim trim2);
+use Exporter 5.57 qw(import);
+our @EXPORT = qw(trim);
 
 
 sub trim { # Startin point: http://www.perlmonks.org/?node_id=36684
@@ -50,7 +50,7 @@ String::Trim - trim whitespace from your strings
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

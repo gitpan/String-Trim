@@ -25,9 +25,9 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'String::Trim',
   'PREREQ_PM' => {
-    'Exporter' => '0'
+    'Exporter' => '5.57'
   },
-  'VERSION' => '0.003',
+  'VERSION' => '0.004',
   'test' => {
     'TESTS' => 't/*.t'
   }

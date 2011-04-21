@@ -1,36 +1,58 @@
+package String::Trim;
+# ABSTRACT: trim whitespace from your strings
 use strict;
 use warnings;
-
-package String::Trim;
-BEGIN {
-  $String::Trim::VERSION = '0.004';
-}
-# ABSTRACT: trim whitespace from your strings
+our $VERSION = '0.005'; # VERSION
 
 
 use Exporter 5.57 qw(import);
 our @EXPORT = qw(trim);
 
 
-sub trim { # Startin point: http://www.perlmonks.org/?node_id=36684
+sub trim { # Starting point: http://www.perlmonks.org/?node_id=36684
+    my $t = qr{^\s+|\s+$};
     if (defined wantarray) {
         @_ = (@_ ? @_ : $_);
         if (ref $_[0] eq 'ARRAY') {
             @_ = @{ $_[0] };
-            for (@_) { s{^\s+|\s+$}{}g if defined $_ }
+            for (@_) { s{$t}{}g if defined $_ }
             return \@_;
         }
+        elsif (ref $_[0] eq 'HASH') {
+            foreach my $k (keys %{ $_[0] }) {
+                (my $nk = $k) =~ s{$t}{}g;
+                if (defined $_[0]->{$k}) {
+                    ($_[0]->{$nk} = $_[0]->{$k}) =~ s{$t}{}g;
+                }
+                else {
+                    $_[0]->{$nk} = undef;
+                }
+                delete $_[0]->{$k} unless $k eq $nk;
+            }
+        }
         else {
-            for (@_ ? @_ : $_) { s{^\s+|\s+$}{}g if defined $_ }
+            for (@_ ? @_ : $_) { s{$t}{}g if defined $_ }
         }
         return wantarray ? @_ : $_[0];
     }
     else {
         if (ref $_[0] eq 'ARRAY') {
-            for (@{ $_[0] }) { s{^\s+|\s+$}{}g if defined $_ }
+            for (@{ $_[0] }) { s{$t}{}g if defined $_ }
+        }
+        elsif (ref $_[0] eq 'HASH') {
+            foreach my $k (keys %{ $_[0] }) {
+                (my $nk = $k) =~ s{$t}{}g;
+                if (defined $_[0]->{$k}) {
+                    ($_[0]->{$nk} = $_[0]->{$k}) =~ s{$t}{}g;
+                }
+                else {
+                    $_[0]->{$nk} = undef;
+                }
+                delete $_[0]->{$k} unless $k eq $nk
+            }
         }
         else {
-            for (@_ ? @_ : $_) { s{^\s+|\s+$}{}g if defined $_ }
+            for (@_ ? @_ : $_) { s{$t}{}g if defined $_ }
         }
     }
 }
@@ -50,7 +72,7 @@ String::Trim - trim whitespace from your strings
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -104,17 +126,22 @@ The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
 site near you, or see L<http://search.cpan.org/dist/String-Trim/>.
 
-The development version lives at L<http://github.com/doherty/String-Trim.git>
+The development version lives at L<http://github.com/doherty/String-Trim>
 and may be cloned from L<git://github.com/doherty/String-Trim.git>.
 Instead of sending patches, please fork this project using the standard
 git and github infrastructure.
+
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/doherty/String-Trim>
+and may be cloned from L<git://github.com/doherty/String-Trim.git>
 
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://github.com/doherty/String-Trim/issues>.
+L<https://github.com/doherty/String-Trim/issues>.
 
 =head1 CREDITS
 

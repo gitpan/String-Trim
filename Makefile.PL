@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'trim whitespace from your strings',
   'AUTHOR' => 'Mike Doherty <doherty@cpan.org>, Jeff Pinyan <pinyan@cpan.org>, Rob Kinyon <rkinyon@cpan.org>, Αριστοτέλης Παγκαλτζής (Aristotle Pagaltzis) <aristotle@cpan.org>',
   'BUILD_REQUIRES' => {
+    'Data::Dumper' => '0',
     'File::Find' => '0',
     'File::Temp' => '0',
     'Test::Builder' => '0.94',
@@ -27,7 +28,7 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Exporter' => '5.57'
   },
-  'VERSION' => '0.004',
+  'VERSION' => '0.005',
   'test' => {
     'TESTS' => 't/*.t'
   }

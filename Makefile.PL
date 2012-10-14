@@ -2,35 +2,35 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.006; }
 
-use ExtUtils::MakeMaker 6.31;
+
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'trim whitespace from your strings',
-  'AUTHOR' => 'Mike Doherty <doherty@cpan.org>, Jeff Pinyan <pinyan@cpan.org>, Rob Kinyon <rkinyon@cpan.org>, Αριστοτέλης Παγκαλτζής (Aristotle Pagaltzis) <aristotle@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Data::Dumper' => '0',
-    'File::Find' => '0',
-    'File::Temp' => '0',
-    'Test::Builder' => '0.94',
-    'Test::More' => '0.94'
+  "ABSTRACT" => "A module to experiment with dist zilla",
+  "AUTHOR" => "Abhishek Shende <abhishekisnot\@gmail.com>",
+  "BUILD_REQUIRES" => {
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Test::More" => "0.88"
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'String-Trim',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'String::Trim',
-  'PREREQ_PM' => {
-    'Exporter' => '5.57'
+  "DISTNAME" => "String-Trim",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "String::Trim",
+  "PREREQ_PM" => {
+    "Carp" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.005',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.001",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
